@@ -69,7 +69,7 @@ class VisionRequest
     public function send()
     {
         try {
-            $response = (new Client)->post(
+            $response = (new Client(config('gcv.client')))->post(
                 $this->getRequestUrl(),
                 [
                     'content-type' => 'application/json',
